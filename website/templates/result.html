@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+
+    <title>Hasil Diagnosis</title>
+</head>
+<body>
+    <div class="hasilDiagnosis">
+        <h1>Hasil Diagnosis</h1>
+        <p>{{ result }}</p>
+
+        {% if solusi %}
+        <h2>Solusi Pengobatan</h2>
+        <ul>
+            {% for penyakit, s in solusi.items() %}
+            <li>{{ penyakit }}: {{ s }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <a href="{{ url_for('views.konsultasi') }}">Kembali</a>
+    </div>
+</body>
+</html>
+
+{% endblock %}
+

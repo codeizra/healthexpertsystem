@@ -1,21 +1,31 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-%}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
-<form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
-  </div>
-</form>
-{% endblock %}
+    %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diagnosa Penyakit Anak</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contain">
+
+            <video autoplay loop muted plays-inline class="background-clip">
+                <source src="../static/images/Children Hospital.mp4" type="video/mp4">
+            </video>
+
+            <div class="about">
+                <h1>Sistem Pakar Diagnosa Penyakit Pada Anak Dibawah 5 Tahun</h1>
+                <p>Apakah Anda khawatir tentang kesehatan si kecil? Jangan ragu untuk mencari bantuan. Sistem kami siap memberikan diagnosa terbaik untuk anak di bawah 5 tahun</p>
+                <button type="button">Konsultasi Sekarang</button>
+            </div>
+        </div>
+    </body>
+    </html>
+    {% endblock %}
+    

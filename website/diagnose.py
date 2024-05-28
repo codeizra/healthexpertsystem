@@ -1,42 +1,53 @@
-
-class Pengguna:
-    def __init__(self, id_user, nama, usia, alamat):
-        self.id_user = id_user
-        self.nama = nama
-        self.usia = usia
-        self.alamat = alamat
-
+import mysql.connector
 
 class SistemLogin:
     def __init__(self):
-        self.database_pengguna = []
+        self.db = mysql.connector.connect(
+            host="localhost",
+            user="your_username",
+            password="your_password",
+            database="diagnose_data"
+        )
+        self.cursor = self.db.cursor()
 
     def tambah_pengguna(self, pengguna):
-        self.database_pengguna.append(pengguna)
+        sql = "INSERT INTO pengguna (id_user, nama, usia, alamat) VALUES (%s, %s, %s, %s)"
+        val = (pengguna.id_user, pengguna.nama, pengguna.usia, pengguna.alamat)
+        self.cursor.execute(sql, val)
+        self.db.commit()
 
     def login(self, id_user):
-        for pengguna in self.database_pengguna:
-            if pengguna.id_user == id_user:
-                print(f"Selamat datang, {pengguna.nama}!")
-                print(f"Usia: {pengguna.usia}")
-                print(f"Alamat: {pengguna.alamat}")
-                return
-        print("ID user tidak ditemukan.")
-        tambah_baru = input("Apakah Anda ingin menambahkan pengguna baru? (ya/tidak): ").lower()
-        if tambah_baru == "ya":
-            nama = input("Masukkan nama: ")
-            usia = int(input("Masukkan usia: "))
-            alamat = input("Masukkan alamat: ")
-            new_id = self.generate_new_id()
-            self.tambah_pengguna(Pengguna(new_id, nama, usia, alamat))
-            print("Silakan login kembali untuk menggunakan ID yang baru.")
-            self.login(new_id)
+        sql = "SELECT * FROM pengguna WHERE id_user = %s"
+        val = (id_user,)
+        self.cursor.execute(sql, val)
+        result = self.cursor.fetchone()
+        if result:
+            print(f"Selamat datang, {result[1]}!")
+            print(f"Usia: {result[2]}")
+            print(f"Alamat: {result[3]}")
         else:
-            print("Terima kasih!")
+            print("ID user tidak ditemukan.")
+            tambah_baru = input("Apakah Anda ingin menambahkan pengguna baru? (ya/tidak): ").lower()
+            if tambah_baru == "ya":
+                nama = input("Masukkan nama: ")
+                usia = int(input("Masukkan usia: "))
+                alamat = input("Masukkan alamat: ")
+                new_id = self.generate_new_id()
+                self.tambah_pengguna(Pengguna(new_id, nama, usia, alamat))
+                print("Silakan login kembali untuk menggunakan ID yang baru.")
+                self.login(new_id)
+            else:
+                print("Terima kasih!")
 
     def generate_new_id(self):
         new_id = ''.join(random.choices('0123456789', k=5))
-        while any(pengguna.id_user == new_id for pengguna in self.database_pengguna):
+        while True:
+            sql = "SELECT * FROM pengguna WHERE id_user = %s"
+            val = (new_id,)
+            self.cursor.execute(sql, val)
+            result = self.cursor.fetchone()
+            if not result:
+                break
             new_id = ''.join(random.choices('0123456789', k=5))
         return new_id
 

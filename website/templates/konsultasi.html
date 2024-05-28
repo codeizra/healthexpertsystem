@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Konsultasi{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous"
+    />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Diagnosa Penyakit Anak</title>
+</head>
+<body>
+    <div class="result">
+        <h1>Diagnosa Penyakit Anak</h1>
+        <p class="instructions">Pilihlah keluhan dan gejala sesuai yang dialami oleh anak Anda.</p>
+        <form action="{{ url_for('views.result') }}" method="post">
+            <div class="form-group">
+                <label for="keluhan" class="keluhan-label">Pilih Keluhan:</label><br>
+                <select name="keluhan" id="keluhan">
+                    <option value="K1">Batuk</option>
+                    <option value="K2">Diare</option>
+                    <option value="K3">Demam</option>
+                    <option value="TIDAK ADA">Tidak Ada</option>
+                </select><br><br>
+            </div>
+
+            <h2>Gejala:</h2>
+            {% for gejala_id, gejala_desc in gejala.items() %}
+            <div class="form-group">
+                <input type="checkbox" id="{{ gejala_id }}" name="gejala" value="{{ gejala_id }}">
+                <label for="{{ gejala_id }}">{{ gejala_desc }}</label>
+            </div>
+            {% endfor %}
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

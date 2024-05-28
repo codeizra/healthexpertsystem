@@ -1,0 +1,268 @@
+:root {
+    --redcherry: #6DC5D1;
+    --pink: #FF5BAE;
+    --darkcream: #FFE4CF;
+    --cream: #FFFDD7;
+    --white: #FFFF;
+    --giraffe: #DD761C;
+
+    --header-height: 3.5rem;
+
+    --body-font: "Manrope", sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1rem;
+    --normal-font-size: .938rem;
+
+    --font-regular: 400;
+    --font-medium: 500;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--white);
+    padding-top: var(--header-height); /* Adjusted for navbar */
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contain {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: var(--z-fixed);
+}
+
+nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav.mr-auto {
+    margin-right: auto;
+}
+
+.navbar-nav.ml-auto {
+    margin-left: auto;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    color: var(--pink);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: var(--redcherry);
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler-icon {
+    color: var(--darkcream);
+    font-size: 1.5rem;
+}
+
+
+.about {
+    max-width: 600px;
+    margin: 5rem auto; /* Increased margin-top for more space */
+    text-align: center; /* Center align text inside about class */
+}
+
+.about h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem; 
+}
+
+.about p {
+    font-size: var(--normal-font-size);
+    color: var(--darkcream);
+    margin-bottom: 3rem; 
+}
+
+.about button {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.about button:hover {
+    background-color: var(--redcherry);
+    transition: 0.3s;
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.result {
+    text-align: center; /* Center align the content */
+    margin-top: 50px; /* Add space from the top */
+}
+
+.result h1 {
+    color: var(--redcherry); /* Change heading color */
+    font-weight: bold; /* Add font weight */
+    margin-bottom: 30px; /* Add space below the heading */
+    text-align: center
+}
+
+.result .instructions {
+    font-size: var(--normal-font-size); /* Set font size for the instruction text */
+    margin-bottom: 2.5rem; /* Add space below the instruction text */
+}
+
+.result .keluhan-label,
+.result h2 {
+    font-size: var(--h2-font-size); /* Set font size */
+    font-weight: 700; /* Set font weight */
+}
+
+.result h2 {
+    margin-top: 20px; /* Add space above Gejala heading */
+    margin-bottom: 20px; /* Add space below Gejala heading */
+}
+
+.result label {
+    margin-left: 10px; /* Add space between checkbox and label */
+}
+
+.result .form-group label {
+    margin-right: 10px; /* Add space between the label and the select dropdown */
+}
+
+.result input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; /* Optional: Add some space between checkboxes and labels */
+}
+
+.result form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    width: 100%;
+    max-width: 400px; /* Optional: limit the width of the form group */
+    margin-bottom: 10px; /* Optional: add some space between form groups */
+}
+
+.result button {
+    background-color: var(--pink); /* Change button background color */
+    color: var(--white); /* Change button text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure the button is inline-block */
+    margin-top: 3rem; /* Add some space above the button */
+    margin-bottom: 5rem;
+}
+
+.result button:hover {
+    background-color: var(--redcherry); /* Change button hover background color */
+}
+
+
+.result button:hover {
+    background-color: var(--redcherry); /* Change button hover background color */
+}
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: var(--redcherry);
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosa Penyakit Anak</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="navbar">
+            <ul class="ul-navbar">
+                <li class="li-navbar">
+                    <a href="#" class="a-navbar">KONSULTASI</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="home.html" class="a-navbar">HOME</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="sind.html" class="a-navbar"> LOG IN</a>
+                </li>
+                <li class="li-navbar">
+                    <a href="sind.html" class="a-navbar">SIGN IN</a>
+                </li>
+            </ul>
+        </div>
+    <div id="gejalaPage">
+        <h2>Pilih Gejala yang Dialami Anak</h2>
+        <form id="gejalaForm" action="#">
+            <input type="checkbox" id="g1" name="gejala[]" value="G1">
+            <label for="g1">Anak tidak bisa minum atau menyusu (G1)</label><br>
+            <input type="checkbox" id="g2" name="gejala[]" value="G2">
+            <label for="g2">Anak memuntahkan makanan yang dimakan (G2)</label><br>
+    
+            <input type="checkbox" id="g3" name="gejala[]" value="G3">
+            <label for="g3">Anak menderita kejang (G3)</label><br>
+    
+            <input type="checkbox" id="g4" name="gejala[]" value="G4">
+            <label for="g4">Anak tampak letargis atau tidak sadar(G4)</label><br>
+    
+            <input type="checkbox" id="g5" name="gejala[]" value="G5">
+            <label for="g5">Napas Normal (G5)</label><br>
+    
+            <input type="checkbox" id="g6" name="gejala[]" value="G6">
+            <label for="g6">Napas cepat (G6)</label><br>
+    
+            <input type="checkbox" id="g7" name="gejala[]" value="G7">
+            <label for="g7">Tarikan dinding dada ke dalam (G7)</label><br>
+    
+            <input type="checkbox" id="g8" name="gejala[]" value="G8">
+            <label for="g8">Stridor (G8)</label><br>
+    
+            <input type="checkbox" id="g9" name="gejala[]" value="G9">
+            <label for="g9">BAB cair atau lembek (G9)</label><br>
+    
+            <input type="checkbox" id="g10" name="gejala[]" value="G10">
+            <label for="g10">Mata cekung (G10)</label><br>
+    
+            <input type="checkbox" id="g11" name="gejala[]" value="G11">
+            <label for="g11">Cubitan kulit perut kembali lambat (G11)</label><br>
+    
+            <input type="checkbox" id="g12" name="gejala[]" value="G12">
+            <label for="g12">Gelisah, rewel/mudah marah (G12)</label><br>
+    
+            <input type="checkbox" id="g13" name="gejala[]" value="G13">
+            <label for="g13">Haus, minum dengan lahap (G13)</label><br>
+    
+            <input type="checkbox" id="g14" name="gejala[]" value="G14">
+            <label for="g14">Cubitan kulit perut sangat lambat (G14)</label><br>
+    
+            <input type="checkbox" id="g15" name="gejala[]" value="G15">
+            <label for="g15">Anak tampak letargis atau tidak sadar (G15)</label><br>
+    
+            <input type="checkbox" id="g16" name="gejala[]" value="G16">
+            <label for="g16">Tidak bisa minum atau malas minum (G16)</label><br>
+    
+            <input type="checkbox" id="g17" name="gejala[]" value="G17">
+            <label for="g17">Diare 14 hari atau lebih (G17)</label><br>
+    
+            <input type="checkbox" id="g18" name="gejala[]" value="G18">
+            <label for="g18">Ada darah dalam tinja (G18)</label><br>
+    
+            <input type="checkbox" id="g19" name="gejala[]" value="G19">
+            <label for="g19">Suhu badan melebihi 37.5º C (G19)</label><br>
+    
+            <input type="checkbox" id="g20" name="gejala[]" value="G20">
+            <label for="g20">Kaku kuduk (anak tidak bisa menunduk hingga dagu mencapai dada) (G20)</label><br>
+    
+            <input type="checkbox" id="g21" name="gejala[]" value="G21">
+            <label for="g21">Ruam kemerahan di kulit (G21)</label><br>
+    
+            <input type="checkbox" id="g22" name="gejala[]" value="G22">
+            <label for="g22">Batuk pilek atau mata merah (G22)</label><br>
+    
+            <input type="checkbox" id="g23" name="gejala[]" value="G23">
+            <label for="g23">Luka di mulut yang dalam atau luas (G23)</label><br>
+    
+            <input type="checkbox" id="g24" name="gejala[]" value="G24">
+            <label for="g24">Kekeruhan pada kornea mata (G24)</label><br>
+    
+            <input type="checkbox" id="g25" name="gejala[]" value="G25">
+            <label for="g25">Luka di mulut (G25)</label><br>
+    
+            <input type="checkbox" id="g26" name="gejala[]" value="G26">
+            <label for="g26">Mata bernanah (G26)</label><br>
+    
+            <input type="checkbox" id="g27" name="gejala[]" value="G27">
+            <label for="g27">Demam 2 - 7 hari (G27)</label><br>
+    
+            <input type="checkbox" id="g28" name="gejala[]" value="G28">
+            <label for="g28">Demam mendadak tinggi dan terus menerus (G28)</label><br>
+    
+            <input type="checkbox" id="g29" name="gejala[]" value="G29">
+            <label for="g29">Nyeri di ulu hati (G29)</label><br>
+    
+            <input type="checkbox" id="g30" name="gejala[]" value="G30">
+            <label for="g30">Bintik bintik merah (G30)</label><br>
+    
+            <input type="checkbox" id="g31" name="gejala[]" value="G31">
+            <label for="g31">Muntah bercampur darah / seperti kopi (G31)</label><br>
+    
+            <input type="checkbox" id="g32" name="gejala[]" value="G32">
+            <label for="g32">Tinja berwarna hitam (G32)</label><br>
+    
+            <input type="checkbox" id="g33" name="gejala[]" value="G33">
+            <label for="g33">Perdarahan dihidung dan gusi (G33)</label><br>
+    
+            <input type="checkbox" id="g34" name="gejala[]" value="G34">
+            <label for="g34">Syok dan gelisah (G34)</label><br>
+    
+            <input type="checkbox" id="g35" name="gejala[]" value="G35">
+            <label for="g35">Infeksi (G35)</label><br>
+    
+            <input type="checkbox" id="g36" name="gejala[]" value="G36">
+            <label for="g36">Pilek (G36)</label><br>
+           
+            <input type="checkbox" id="P1" name="Penyakit[]" value="P1">
+            <label for="P1">Tanda Bahaya Umum (P1)</label><br>
+            <input type="checkbox" id="P2" name="Penyakit[]" value="P2">
+            <label for="P2">Batuk (P2)</label><br>
+            <input type="checkbox" id="P3" name="Penyakit[]" value="P3">
+            <label for="P3">Pneumonia (P3)</label><br>
+            <input type="checkbox" id="P4" name="Penyakit[]" value="P4">
+            <label for="P4">Pneumonia Berat (P4)</label><br>
+            <input type="checkbox" id="P5" name="Penyakit[]" value="P5">
+            <label for="P5">Diare (P5)</label><br>
+            <input type="checkbox" id="P6" name="Penyakit[]" value="P6">
+            <label for="P6">Diare Dehidrasi Ringan (P6)</label><br>
+            <input type="checkbox" id="P7" name="Penyakit[]" value="P7">
+            <label for="P7">Diare Dehidrasi Berat (P7)</label><br>
+            <input type="checkbox" id="P8" name="Penyakit[]" value="P8">
+            <label for="P8">Diare Persiten (P8)</label><br>
+            <input type="checkbox" id="P9" name="Penyakit[]" value="P9">
+            <label for="P9">Diare Persiten Berat (P9)</label><br>
+            <input type="checkbox" id="P10" name="Penyakit[]" value="P10">
+            <label for="P10">Disentri (P10)</label><br>
+            <input type="checkbox" id="P11" name="Penyakit[]" value="P11">
+            <label for="P11">Demam (P11)</label><br>
+            <input type="checkbox" id="P12" name="Penyakit[]" value="P12">
+            <label for="P12">Demam dengan Tanda Bahaya Umum (P12)</label><br>
+            <input type="checkbox" id="P13" name="Penyakit[]" value="P13">
+            <label for="P13">Campak (P13)</label><br>
+            <input type="checkbox" id="P14" name="Penyakit[]" value="P14">
+            <label for="P14">Campak dengan Komplikasi Berat (P14)</label><br>
+            <input type="checkbox" id="P15" name="Penyakit[]" value="P15">
+            <label for="P15">Campak dengan Komplikasi (P15)</label><br>
+            <input type="checkbox" id="P16" name="Penyakit[]" value="P16">
+            <label for="P16">Demam mungkin DBD (P16)</label><br>
+            <input type="checkbox" id="P17" name="Penyakit[]" value="P17">
+            <label for="P17">DBD (P17)</label><br>
+            <input type="checkbox" id="P18" name="Penyakit[]" value="P18">
+            <label for="P18">Demam bukan DBD (P18)</label><br>
+
+            <button id="nextButton" type="button" onclick="nextPage()">Next</button>
+        </form>
+    </div>
+
+    <div id="keluhanPage" class="hidden">
+        
+        <h2>Pilih Keluhan Anak</h2>
+        <form id="keluhanForm" action="#">
+            <input type="checkbox" id="k1" name="keluhan[]" value="K1">
+            <label for="k1">Batuk (K1)</label><br>
+            <input type="checkbox" id="k2" name="keluhan[]" value="K2">
+            <label for="k2">Diare (K2)</label><br>
+            <input type="checkbox" id="k3" name="keluhan[]" value="K3">
+            <label for="k3">Demam(K3)</label><br>
+            <input type="checkbox" id="k4" name="keluhan[]" value="K4">
+            <label for="k4">Tidak Ada</label><br>
+
+
+            <button id="backButton" type="button" onclick="prevPage()">Back</button>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div id="hasilDiagnosis" class="hidden">
+        <h2>Hasil Diagnosa</h2>
+        <p id="diagnosisResult"></p>
+    </div>
+    <div class="footer">
+        <p>🍒   cherrypy</p>
+        <p>📍   Lokasi </p>
+        <p>☎   08999999999</p>
+        <p>✉   cherrypy.gmail.com</p>
+
+    </div>
+</body>
+</html>
